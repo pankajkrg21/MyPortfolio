@@ -27,11 +27,13 @@
   <header class="hero">
     <div class="hero-content">
       <div class="about-text">
-        <p>
-          Hi! I’m <span class="highlight">Pankaj</span>, an MCA student at <span class="highlight">MIT-WPU</span>.
-          I enjoy building <span class="highlight">Java-based applications</span> and exploring <span class="highlight">cybersecurity</span>.
-          My goal is to grow as a <span class="highlight">full-stack developer</span> and contribute to meaningful tech solutions.
-        </p>
+       <p>
+  Hi! I’m <span class="highlight">Pankaj</span>, an MCA student at <span class="highlight">MIT-WPU</span>.
+  I enjoy building <span class="highlight">Java-based applications</span> and exploring <span class="highlight">cybersecurity</span>.
+  My goal is to grow as a <span class="highlight">full-stack developer</span> and contribute to <span class="highlight">meaningful tech solutions</span>.
+</p>
+
+
       </div>
 
       <div class="hero-image">
@@ -62,56 +64,79 @@
  
   <section id="skills" class="section-wrapper fade-in">
   <h2><i class="fas fa-tools"></i> Technical Skills</h2>
-  <div class="two-column">
-    <ul>
-      <li><i class="fab fa-java icon-java"></i> Java</li>
-      <li><i class="fas fa-database icon-sql"></i> SQL</li>
-      <li><i class="fab fa-js icon-js"></i> JavaScript</li>
-      <li><i class="fab fa-python icon-python"></i> Python</li>
-    </ul>
-    <ul>
-      <li><i class="fas fa-code icon-code"></i> JDBC / Servlets</li>
-      <li><i class="fas fa-database icon-mysql"></i> MySQL Workbench</li>
-      <li><i class="fab fa-linux icon-linux"></i> Linux, GitHub</li>
-      <li><i class="fas fa-code icon-editor"></i> VS Code, Eclipse</li>
-    </ul>
+  <div class="skills-grid-3x3">
+    <div class="skill-card"><i class="fab fa-java icon-java skill-icon"></i> <span>Java</span></div>
+    <div class="skill-card"><i class="fas fa-database icon-sql skill-icon"></i> <span>SQL</span></div>
+    <div class="skill-card"><i class="fab fa-js icon-js skill-icon"></i> <span>JavaScript</span></div>
+    <div class="skill-card"><i class="fab fa-python icon-python skill-icon"></i> <span>Python</span></div>
+    <div class="skill-card"><i class="fas fa-code icon-code skill-icon"></i> <span>JDBC / Servlets</span></div>
+    <div class="skill-card"><i class="fas fa-database icon-mysql skill-icon"></i> <span>MySQL Workbench</span></div>
+    <div class="skill-card"><i class="fab fa-linux icon-linux skill-icon"></i> <span>Linux</span></div>
+    <div class="skill-card"><i class="fab fa-github icon-github skill-icon"></i> <span>GitHub</span></div>
+    <div class="skill-card"><i class="fas fa-code icon-editor skill-icon"></i> <span>VS Code / Eclipse</span></div>
+  </div>
+</section>
+
+
+  <section id="projects" class="section-wrapper fade-in">
+  <h2><i class="fas fa-folder-open"></i> Projects</h2>
+
+  <div class="project">
+    <h3><i class="fas fa-shield-alt project-icon shield"></i> CypherStack <span class="project-date">(Dec 2024)</span></h3>
+    <p>
+      A secure desktop file protection system built in Java with a modern JavaFX GUI, CypherStack implements <strong>AES-256 encryption</strong> to safeguard files locally.
+      It features a real-time <strong>Intrusion Detection System (IDS)</strong> that detects suspicious access with 98% accuracy.
+      Encrypted metadata and credentials are managed securely using MySQL, and file operations complete in under 500ms.
+    </p>
+    <div class="tech-stack">
+      <span class="badge">Java</span>
+      <span class="badge">JavaFX</span>
+      <span class="badge">AES-256</span>
+      <span class="badge">MySQL</span>
+    </div>
+    <a href="#" class="btn-project"><i class="fas fa-external-link-alt"></i> View Demo</a>
+  </div>
+
+  <div class="project">
+    <h3><i class="fas fa-briefcase project-icon briefcase"></i> Job Portal <span class="project-date">(Apr 2025)</span></h3>
+    <p>
+      A robust web-based platform built using <strong>Java Servlets and JDBC</strong> to connect job seekers and recruiters.
+      Features include secure authentication, <strong>role-based access</strong>, full-text job search, and application tracking.
+      Handles over 50 concurrent users and manages 1000+ job applications through a MySQL-backed system.
+    </p>
+    <div class="tech-stack">
+      <span class="badge">Java Servlets</span>
+      <span class="badge">JDBC</span>
+      <span class="badge">MySQL</span>
+      <span class="badge">HTML/CSS</span>
+    </div>
+    <a href="#" class="btn-project"><i class="fab fa-github"></i> GitHub Repo</a>
   </div>
 </section>
 
 
  
-  <section id="projects" class="section-wrapper fade-in">
-    <h2><i class="fas fa-folder-open"></i> Projects</h2>
-    <div class="project">
-      <h3><i class="fas fa-shield-alt"></i> CypherStack (Dec 2024)</h3>
-      <p>A Java desktop app with AES encryption, IDS system, GUI in JavaFX, and secure MySQL storage.</p>
-      <a href="#" class="btn-project"><i class="fas fa-external-link-alt"></i> View Demo</a>
-    </div>
-    <div class="project">
-      <h3><i class="fas fa-briefcase"></i> Job Portal (Apr 2025)</h3>
-      <p>A job platform using Java Servlets and JDBC with user login, job posting/search, and application tracking.</p>
-      <a href="#" class="btn-project"><i class="fab fa-github"></i> GitHub Repo</a>
-    </div>
-  </section>
-
- 
   <section id="achievements" class="section-wrapper fade-in">
-    <h2><i class="fas fa-trophy"></i> Achievements</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h4>Hack MIT-WPU’25 – SecuScan</h4>
-          <p>Conceptualized an AI-powered proactive security scanner and won the Appreciation Prize for innovation.</p>
-        </div>
-      </div>
-    </div>
+  <h2><i class="fas fa-trophy"></i> Achievements</h2>
 
-    <h2><i class="fas fa-certificate"></i> Certifications</h2>
-    <ul>
-      <li>Cybersecurity – Coursera (Google)</li>
-      <li>AWS Fundamentals – Coursera (Google)</li>
-    </ul>
-  </section>
+  <div class="achievement-card">
+    <h3><i class="fas fa-lightbulb highlight-icon"></i> Hack MIT-WPU’25 – <span class="highlight">SecuScan</span></h3>
+    <p>
+       an <span class="highlight">AI-powered proactive security scanner</span> that simulates cyberattacks to identify system vulnerabilities.
+      SecuScan won the <span class="highlight">Appreciation Prize for Innovation</span> for its use of artificial intelligence and real-time scanning heuristics.
+    </p>
+  </div>
+</section>
+
+
+<section id="certifications" class="section-wrapper fade-in">
+  <h2><i class="fas fa-award"></i> Certifications</h2>
+  <ul class="cert-list">
+    <li><i class="fas fa-certificate"></i> <span class="highlight">Cybersecurity</span> – Coursera (Google)</li>
+    <li><i class="fas fa-certificate"></i> <span class="highlight">AWS Fundamentals</span> – Coursera (Google)</li>
+  </ul>
+</section>
+
 
   
   <section id="contact" class="section-wrapper fade-in">
