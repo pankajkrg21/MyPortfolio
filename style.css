@@ -22,13 +22,32 @@ body {
   backdrop-filter: blur(10px);
   z-index: 999;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 100px;
-  padding: 14px 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
   font-size: 1rem;
   border-bottom: 1px solid #21262D;
   animation: slideDown 0.6s ease-out;
+}
+
+.nav-links {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #6f42c1;
+  padding: 6px;
+  box-shadow: 0 0 10px rgba(111, 66, 193, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
 }
 
 @keyframes slideDown {
@@ -114,13 +133,11 @@ header.hero::before {
   overflow: hidden;
 }
 
-/* Bubble-up effect on hover */
 .about-text:hover {
   transform: translateY(-10px) scale(1.015);
   border-color: #00B4D8;
   box-shadow: 0 12px 40px rgba(88, 166, 255, 0.25), 0 0 30px rgba(88, 166, 255, 0.15);
 }
-
 
 @keyframes slideFromLeft {
   from { opacity: 0; transform: translateX(-60px); }
@@ -137,10 +154,9 @@ header.hero::before {
 
 .hero-image h1:hover {
   transform: scale(1.05);
-  color: #FFD700; /* Gold */
+  color: #FFD700;
   text-shadow: 0 0 10px rgba(88, 166, 255, 0.8), 0 0 20px rgba(88, 166, 255, 0.6);
 }
-
 
 @keyframes slideFromRight {
   from { opacity: 0; transform: translateX(60px); }
@@ -168,7 +184,6 @@ header.hero::before {
   font-size: 1.1rem;
   color: #58A6FF;
 }
-
 
 section, .edu-card, .project, .timeline-item {
   opacity: 0;
@@ -223,14 +238,12 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
 }
 
 @media (max-width: 768px) {
-
   section {
     padding: 20px 16px;
     margin: 40px 12px;
     scroll-margin-top: 100px;
   }
 
-  
   #education,
   #skills,
   #projects,
@@ -261,17 +274,13 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
     width: 180px;
     height: 180px;
   }
+
   #contact .two-column {
     flex-direction: column;
     align-items: center;
   }
-
 }
 
-/* =======================
-   Skill Cards in Grid of 3
-======================= */
-/* Force 3 columns and 3 rows grid */
 .skills-grid-3x3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -279,7 +288,6 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
   margin-top: 30px;
 }
 
-/* Skill card styling */
 .skill-card {
   display: flex;
   align-items: center;
@@ -300,12 +308,10 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
   background: rgba(88, 166, 255, 0.08);
 }
 
-/* Icon sizing */
 .skill-icon {
   font-size: 2rem;
 }
 
-/* Icon colors */
 .icon-java { color: #f89820; }
 .icon-sql { color: #cc5500; }
 .icon-js { color: #f7df1e; }
@@ -317,15 +323,13 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
 .icon-editor { color: #007acc; }
 
 .highlight {
-  color: #ffb347; /* Warm stylish orange-gold */
+  color: #ffb347;
   font-weight: 700;
   background: linear-gradient(90deg, #ffb347, #ffcc70);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 4px rgba(255, 179, 71, 0.3);
 }
-
-
 
 .animate {
   animation: pulse 1.8s infinite;
@@ -407,15 +411,6 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
   margin-right: 8px;
 }
 
-.highlight {
-  font-weight: 700;
-  background: linear-gradient(90deg, #ffb347, #ffcc70);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 4px rgba(255, 179, 71, 0.3);
-}
-
-
 #certifications h2 {
   margin-top: 40px;
 }
@@ -442,9 +437,7 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
   font-weight: 500;
 }
 
-
-
-  #contact a {
+#contact a {
   color: #58A6FF;
   text-decoration: none;
   font-weight: 500;
@@ -479,7 +472,6 @@ footer {
   z-index: 2;
 }
 
-/* Wave Ring Layers */
 .profile-pic-container::before,
 .profile-pic-container::after {
   content: '';
@@ -496,12 +488,10 @@ footer {
   opacity: 0;
 }
 
-/* First wave */
 .profile-pic-container:hover::before {
   animation: waveGlow 2s ease-out infinite;
 }
 
-/* Second wave with delay */
 .profile-pic-container:hover::after {
   animation: waveGlow 2s ease-out 1s infinite;
 }
@@ -523,10 +513,6 @@ footer {
   }
 }
 
-
-/* Existing CSS content already provided by user */
-
-/* Back to Top Button */
 #topBtn {
   position: fixed;
   bottom: 25px;
@@ -539,13 +525,13 @@ footer {
   outline: none;
   width: 45px;
   height: 45px;
-  border-radius: 50%;
   font-size: 18px;
   cursor: pointer;
-  display: none; /* hidden initially */
+  display: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 #topBtn.show {
   display: block;
   opacity: 1;
