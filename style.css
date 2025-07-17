@@ -9,6 +9,11 @@ body {
   scroll-behavior: smooth;
 }
 
+* {
+  transition: all 0.4s ease-in-out;
+  box-sizing: border-box;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -143,8 +148,8 @@ header.hero::before {
   overflow: hidden;
   font-size: 1.1rem;
   color: #58A6FF;
-  border-right: 2px solid #58A6FF;
 }
+
 
 section, .edu-card, .project, .timeline-item {
   opacity: 0;
@@ -206,6 +211,7 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
     scroll-margin-top: 100px;
   }
 
+  
   #education,
   #skills,
   #projects,
@@ -236,23 +242,201 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
     width: 180px;
     height: 180px;
   }
-
   #contact .two-column {
     flex-direction: column;
     align-items: center;
   }
+
 }
 
+/* =======================
+   Skill Cards in Grid of 3
+======================= */
+/* Force 3 columns and 3 rows grid */
+.skills-grid-3x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Skill card styling */
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 24px;
+  border-left: 4px solid #58A6FF;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #E2E8F0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(88, 166, 255, 0.08);
+}
+
+/* Icon sizing */
+.skill-icon {
+  font-size: 2rem;
+}
+
+/* Icon colors */
 .icon-java { color: #f89820; }
 .icon-sql { color: #cc5500; }
 .icon-js { color: #f7df1e; }
 .icon-python { color: #3572A5; }
 .icon-code { color: #00ffff; }
 .icon-mysql { color: #00758f; }
-.icon-linux { color: #fcc624; }
+.icon-linux { color: #FCC624; }
+.icon-github { color: #171515; }
 .icon-editor { color: #007acc; }
 
-.two-column i:hover {
-  transform: scale(1.2);
-  transition: transform 0.3s ease;
+.highlight {
+  color: #ffb347; /* Warm stylish orange-gold */
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffb347, #ffcc70);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 4px rgba(255, 179, 71, 0.3);
+}
+
+
+
+.animate {
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 0px #58A6FF; }
+  50% { text-shadow: 0 0 10px #58A6FF; }
+  100% { text-shadow: 0 0 0px #58A6FF; }
+}
+
+.project-icon {
+  margin-right: 8px;
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+.shield {
+  color: #00dfc0;
+}
+
+.briefcase {
+  color: #ffb347;
+}
+
+.project-date {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.tech-stack {
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(88, 166, 255, 0.12);
+  color: #58A6FF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  margin: 6px 6px 0 0;
+  border-radius: 12px;
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.badge:hover {
+  background-color: rgba(88, 166, 255, 0.35);
+}
+
+.achievement-card {
+  background: rgba(17, 24, 39, 0.25);
+  border-radius: 14px;
+  padding: 24px 30px;
+  margin: 20px 10px;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.8rem;
+}
+
+.achievement-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.highlight-icon {
+  color: #facc15;
+  margin-right: 8px;
+}
+
+.highlight {
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffb347, #ffcc70);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 4px rgba(255, 179, 71, 0.3);
+}
+
+
+#certifications h2 {
+  margin-top: 40px;
+}
+
+.cert-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.05rem;
+}
+
+.cert-list li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cert-list i {
+  color: #58A6FF;
+}
+
+.provider {
+  color: #a5d8ff;
+  font-weight: 500;
+}
+
+
+
+  #contact a {
+  color: #58A6FF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #00B4D8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  background: rgba(17, 24, 39, 0.3);
+  border-top: 1px solid rgba(88, 166, 255, 0.15);
 }
