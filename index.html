@@ -9,9 +9,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
+<button onclick="topFunction()" id="topBtn" title="Go to top" aria-label="Back to top">
+  <i class="fas fa-circle-arrow-up"></i>
+</button>
+
+
+<script>
+  const topBtn = document.getElementById("topBtn");
+
+  function checkScroll() {
+    if (window.scrollY > 100) {
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
+    }
+  }
+
+  function topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.addEventListener("scroll", checkScroll);
+  window.addEventListener("load", checkScroll); // ensure it hides on refresh at top
+</script>
+
+
+
 <body>
 
-  
+  <!-- Navbar -->
   <nav class="navbar">
     <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
     <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
@@ -22,123 +49,139 @@
     </a>
   </nav>
 
-  
-
+  <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
       <div class="about-text">
-       <p>
-  Hi! I’m <span class="highlight">Pankaj</span>, an MCA student at <span class="highlight">MIT-WPU</span>.
-  I enjoy building <span class="highlight">Java-based applications</span> and exploring <span class="highlight">cybersecurity</span>.
-  My goal is to grow as a <span class="highlight">full-stack developer</span> and contribute to <span class="highlight">meaningful tech solutions</span>.
-</p>
-
-
+        <p>
+          Hi! I’m <span class="highlight">Pankaj</span>, an MCA student at <span class="highlight">MIT-WPU</span>.
+          I enjoy building <span class="highlight">Java-based applications</span> and exploring <span class="highlight">cybersecurity</span>.
+          My goal is to grow as a <span class="highlight">full-stack developer</span> and contribute to <span class="highlight">meaningful tech solutions</span>.
+        </p>
       </div>
 
       <div class="hero-image">
-        <img src="images/profile_pic.jpg" alt="Profile Picture" class="profile-pic" />
+        <div class="profile-pic-container">
+  <img src="images/profile_pic.jpg" alt="Profile Picture" class="profile-pic" />
+</div>
+
         <h1>Pankaj Kumar Gupta</h1>
         <p class="typing"><i class="fas fa-laptop-code"></i> <span id="role"></span></p>
       </div>
     </div>
   </header>
 
-  
+  <!-- Education -->
   <section id="education" class="section-wrapper fade-in">
-    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-    <div class="education-cards">
-      <div class="edu-card">
-        <h3>MCA <span class="edu-year">2024–2026</span></h3>
-        <p><i class="fas fa-university"></i> MIT-WPU, Pune</p>
-        <p><i class="fas fa-star"></i> CGPA: <strong>7.95</strong></p>
+  <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+  
+  <div class="education-cards">
+
+    <!-- MCA Card -->
+    <div class="edu-card">
+      <h3><i class="fas fa-user-graduate"></i> MCA <span class="edu-year">(2024–2026)</span></h3>
+      <p><i class="fas fa-university"></i> MIT-WPU, Pune</p>
+      <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+      <p><i class="fas fa-book"></i> Core: Java, DBMS, Cybersecurity</p>
+      <p><i class="fas fa-star"></i> CGPA: <strong>7.95</strong></p>
+      <div class="badge-row">
+        <span class="badge">Full-Time</span>
+        <span class="badge">On-Campus</span>
+        <span class="badge">AICTE Approved</span>
       </div>
-      <div class="edu-card">
-        <h3>BCA <span class="edu-year">2021–2024</span></h3>
-        <p><i class="fas fa-university"></i> Patna University</p>
-        <p><i class="fas fa-star"></i> CGPA: <strong>9.29</strong></p>
+    </div>
+
+    <!-- BCA Card -->
+    <div class="edu-card">
+      <h3><i class="fas fa-user-graduate"></i> BCA <span class="edu-year">(2021–2024)</span></h3>
+      <p><i class="fas fa-university"></i> Patna University</p>
+      <p><i class="fas fa-map-marker-alt"></i> Patna, Bihar</p>
+      <p><i class="fas fa-award"></i> <strong>Department Topper</strong></p>
+      <p><i class="fas fa-book"></i> Focus: Web Dev, Data Structures, OS</p>
+      <p><i class="fas fa-star"></i> CGPA: <strong>9.29</strong></p>
+      <div class="badge-row">
+        <span class="badge">Full-Time</span>
+        <span class="badge">UGC Recognized</span>
+        <span class="badge">On-Campus</span>
       </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Skills -->
+  <section id="skills" class="section-wrapper fade-in">
+    <h2><i class="fas fa-tools"></i> Technical Skills</h2>
+    <div class="skills-grid-3x3">
+      <div class="skill-card"><i class="fab fa-java icon-java skill-icon"></i> Java</div>
+      <div class="skill-card"><i class="fas fa-database icon-sql skill-icon"></i> SQL</div>
+      <div class="skill-card"><i class="fab fa-js icon-js skill-icon"></i> JavaScript</div>
+      <div class="skill-card"><i class="fab fa-python icon-python skill-icon"></i> Python</div>
+      <div class="skill-card"><i class="fas fa-code icon-code skill-icon"></i> JDBC / Servlets</div>
+      <div class="skill-card"><i class="fas fa-database icon-mysql skill-icon"></i> MySQL Workbench</div>
+      <div class="skill-card"><i class="fab fa-linux icon-linux skill-icon"></i> Linux</div>
+      <div class="skill-card"><i class="fab fa-github icon-github skill-icon"></i> GitHub</div>
+      <div class="skill-card"><i class="fas fa-code icon-editor skill-icon"></i> VS Code / Eclipse</div>
     </div>
   </section>
 
- 
-  <section id="skills" class="section-wrapper fade-in">
-  <h2><i class="fas fa-tools"></i> Technical Skills</h2>
-  <div class="skills-grid-3x3">
-    <div class="skill-card"><i class="fab fa-java icon-java skill-icon"></i> <span>Java</span></div>
-    <div class="skill-card"><i class="fas fa-database icon-sql skill-icon"></i> <span>SQL</span></div>
-    <div class="skill-card"><i class="fab fa-js icon-js skill-icon"></i> <span>JavaScript</span></div>
-    <div class="skill-card"><i class="fab fa-python icon-python skill-icon"></i> <span>Python</span></div>
-    <div class="skill-card"><i class="fas fa-code icon-code skill-icon"></i> <span>JDBC / Servlets</span></div>
-    <div class="skill-card"><i class="fas fa-database icon-mysql skill-icon"></i> <span>MySQL Workbench</span></div>
-    <div class="skill-card"><i class="fab fa-linux icon-linux skill-icon"></i> <span>Linux</span></div>
-    <div class="skill-card"><i class="fab fa-github icon-github skill-icon"></i> <span>GitHub</span></div>
-    <div class="skill-card"><i class="fas fa-code icon-editor skill-icon"></i> <span>VS Code / Eclipse</span></div>
-  </div>
-</section>
-
-
+  <!-- Projects -->
   <section id="projects" class="section-wrapper fade-in">
-  <h2><i class="fas fa-folder-open"></i> Projects</h2>
+    <h2><i class="fas fa-folder-open"></i> Projects</h2>
 
-  <div class="project">
-    <h3><i class="fas fa-shield-alt project-icon shield"></i> CypherStack <span class="project-date">(Dec 2024)</span></h3>
-    <p>
-      A secure desktop file protection system built in Java with a modern JavaFX GUI, CypherStack implements <strong>AES-256 encryption</strong> to safeguard files locally.
-      It features a real-time <strong>Intrusion Detection System (IDS)</strong> that detects suspicious access with 98% accuracy.
-      Encrypted metadata and credentials are managed securely using MySQL, and file operations complete in under 500ms.
-    </p>
-    <div class="tech-stack">
-      <span class="badge">Java</span>
-      <span class="badge">JavaFX</span>
-      <span class="badge">AES-256</span>
-      <span class="badge">MySQL</span>
+    <div class="project">
+      <h3><i class="fas fa-shield-alt project-icon shield"></i> CypherStack <span class="project-date">(Dec 2024)</span></h3>
+      <p>
+        A secure desktop file protection system built in Java with a modern JavaFX GUI, CypherStack implements <strong>AES-256 encryption</strong> to safeguard files locally.
+        It features a real-time <strong>Intrusion Detection System (IDS)</strong> with 98% accuracy and handles encrypted metadata securely via MySQL.
+      </p>
+      <div class="tech-stack">
+        <span class="badge">Java</span>
+        <span class="badge">JavaFX</span>
+        <span class="badge">AES-256</span>
+        <span class="badge">MySQL</span>
+      </div>
+      <a href="#" class="btn-project"><i class="fas fa-external-link-alt"></i> View Demo</a>
     </div>
-    <a href="#" class="btn-project"><i class="fas fa-external-link-alt"></i> View Demo</a>
-  </div>
 
-  <div class="project">
-    <h3><i class="fas fa-briefcase project-icon briefcase"></i> Job Portal <span class="project-date">(Apr 2025)</span></h3>
-    <p>
-      A robust web-based platform built using <strong>Java Servlets and JDBC</strong> to connect job seekers and recruiters.
-      Features include secure authentication, <strong>role-based access</strong>, full-text job search, and application tracking.
-      Handles over 50 concurrent users and manages 1000+ job applications through a MySQL-backed system.
-    </p>
-    <div class="tech-stack">
-      <span class="badge">Java Servlets</span>
-      <span class="badge">JDBC</span>
-      <span class="badge">MySQL</span>
-      <span class="badge">HTML/CSS</span>
+    <div class="project">
+      <h3><i class="fas fa-briefcase project-icon briefcase"></i> Job Portal <span class="project-date">(Apr 2025)</span></h3>
+      <p>
+        A robust web-based platform using <strong>Java Servlets and JDBC</strong> for job seekers and recruiters with secure authentication, role-based access, and real-time tracking.
+      </p>
+      <div class="tech-stack">
+        <span class="badge">Java Servlets</span>
+        <span class="badge">JDBC</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">HTML/CSS</span>
+      </div>
+      <a href="#" class="btn-project"><i class="fab fa-github"></i> GitHub Repo</a>
     </div>
-    <a href="#" class="btn-project"><i class="fab fa-github"></i> GitHub Repo</a>
-  </div>
-</section>
+  </section>
 
-
- 
+  <!-- Achievements -->
   <section id="achievements" class="section-wrapper fade-in">
-  <h2><i class="fas fa-trophy"></i> Achievements</h2>
+    <h2><i class="fas fa-trophy"></i> Achievements</h2>
+    <div class="achievement-card">
+      <h3><i class="fas fa-lightbulb highlight-icon"></i> Hack MIT-WPU’25 – <span class="highlight">SecuScan</span></h3>
+      <p>
+        An <span class="highlight">AI-powered proactive security scanner</span> that simulates cyberattacks to identify vulnerabilities.
+        Won the <span class="highlight">Appreciation Prize for Innovation</span> at Hack MIT-WPU 2025.
+      </p>
+    </div>
+  </section>
 
-  <div class="achievement-card">
-    <h3><i class="fas fa-lightbulb highlight-icon"></i> Hack MIT-WPU’25 – <span class="highlight">SecuScan</span></h3>
-    <p>
-       an <span class="highlight">AI-powered proactive security scanner</span> that simulates cyberattacks to identify system vulnerabilities.
-      SecuScan won the <span class="highlight">Appreciation Prize for Innovation</span> for its use of artificial intelligence and real-time scanning heuristics.
-    </p>
-  </div>
-</section>
+  <!-- Certifications -->
+  <section id="certifications" class="section-wrapper fade-in">
+    <h2><i class="fas fa-award"></i> Certifications</h2>
+    <ul class="cert-list">
+      <li><i class="fas fa-certificate"></i> <span class="highlight">Cybersecurity</span> – Coursera (Google)</li>
+      <li><i class="fas fa-certificate"></i> <span class="highlight">AWS Fundamentals</span> – Coursera (Google)</li>
+    </ul>
+  </section>
 
-
-<section id="certifications" class="section-wrapper fade-in">
-  <h2><i class="fas fa-award"></i> Certifications</h2>
-  <ul class="cert-list">
-    <li><i class="fas fa-certificate"></i> <span class="highlight">Cybersecurity</span> – Coursera (Google)</li>
-    <li><i class="fas fa-certificate"></i> <span class="highlight">AWS Fundamentals</span> – Coursera (Google)</li>
-  </ul>
-</section>
-
-
-  
+  <!-- Contact -->
   <section id="contact" class="section-wrapper fade-in">
     <h2><i class="fas fa-address-card"></i> Contact</h2>
     <div class="two-column">
@@ -148,58 +191,64 @@
       </ul>
       <ul>
         <li><i class="fab fa-github"></i> <a href="https://github.com/pankajkrg21" target="_blank">github.com/pankajkrg21</a></li>
-        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/pankaj-kumar-gupta-b22126373/" target="_blank">linkedin.com/in/pankaj-kumar-gupta</a></li>
+        <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/pankaj-kumar-gupta" target="_blank">linkedin.com/in/pankaj-kumar-gupta</a></li>
       </ul>
     </div>
   </section>
 
- 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Pankaj Kumar Gupta</p>
   </footer>
 
- 
- <script>
-  
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); 
-      }
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" id="topBtn" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- JavaScript -->
+  <script>
+    // Scroll Animation
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section, .edu-card, .project, .timeline-item').forEach(el => {
+      observer.observe(el);
     });
-  }, {
-    threshold: 0.1
-  });
 
-  
-  document.querySelectorAll('section, .edu-card, .project, .timeline-item').forEach(el => {
-    observer.observe(el);
-  });
+    // Typing effect
+    const roleText = "Aspiring Software Developer";
+    let i = 0, typed = false;
 
-  const roleText = "Aspiring Software Developer";
-  let i = 0;
-  let typed = false;
-
-  function type() {
-    const roleEl = document.getElementById("role");
-    if (!typed && isInViewport(roleEl)) {
-      typed = true;
-      const interval = setInterval(() => {
-        roleEl.textContent += roleText.charAt(i);
-        i++;
-        if (i === roleText.length) clearInterval(interval);
-      }, 100);
+    function type() {
+      const roleEl = document.getElementById("role");
+      if (!typed && isInViewport(roleEl)) {
+        typed = true;
+        const interval = setInterval(() => {
+          roleEl.textContent += roleText.charAt(i);
+          i++;
+          if (i === roleText.length) clearInterval(interval);
+        }, 100);
+      }
     }
-  }
 
-  function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top <= window.innerHeight && rect.bottom >= 0;
-  }
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return rect.top <= window.innerHeight && rect.bottom >= 0;
+    }
 
-  window.addEventListener("scroll", type);
-  window.addEventListener("load", type);
-</script>
+    window.addEventListener("scroll", type);
+    window.addEventListener("load", type);
+
+    // Scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
 </body>
 </html>
