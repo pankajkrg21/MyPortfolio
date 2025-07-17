@@ -1,10 +1,12 @@
 body {
-  background: url("images/background.jpg") no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+              url("images/background.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: 'Poppins', sans-serif;
   color: #C9D1D9;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
   scroll-behavior: smooth;
 }
@@ -13,6 +15,24 @@ body {
   transition: all 0.4s ease-in-out;
   box-sizing: border-box;
 }
+
+.overlay-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.overlay-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45); /* Adjust opacity for desired darkness */
+  z-index: -1;
+  pointer-events: none;
+}
+
 
 .navbar {
   position: fixed;
@@ -78,14 +98,16 @@ body {
 }
 
 .resume-btn:hover {
-  background: #58A6FF;
-  color: #0D1117;
+  background: #8c09e3;
+  color: #e9f2f0;
 }
 
 header.hero {
-  background: url('images/cover.png') no-repeat center top;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+              url('images/cover.png') no-repeat center top;
   background-size: cover;
   padding: 100px 20px 40px;
+  height: 500px;
   position: relative;
   color: #fff;
   max-width: 100%;
@@ -154,7 +176,7 @@ header.hero::before {
 
 .hero-image h1:hover {
   transform: scale(1.05);
-  color: #FFD700;
+  color: #58A6FF;
   text-shadow: 0 0 10px rgba(88, 166, 255, 0.8), 0 0 20px rgba(88, 166, 255, 0.6);
 }
 
@@ -175,7 +197,7 @@ header.hero::before {
 
 .profile-pic:hover {
   transform: scale(1.07);
-  border-color: #00B4D8;
+  border-color: #9400d8;
 }
 
 .typing {
@@ -183,14 +205,24 @@ header.hero::before {
   overflow: hidden;
   font-size: 1.1rem;
   color: #58A6FF;
+  margin-left: 30px;
+  text-align: center;
 }
+
+@media (max-width: 768px) {
+  .typing {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
 
 section, .edu-card, .project, .timeline-item {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  padding: 30px 40px;
-  margin: 60px 20px;
+  padding: 10px 40px 30px; /* Increased bottom padding */
+  margin: 30px 20px 50px;  /* Increased bottom margin */
   background: rgba(17, 24, 39, 0.25);
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -198,6 +230,19 @@ section, .edu-card, .project, .timeline-item {
   border: 1px solid rgba(88, 166, 255, 0.2);
   scroll-margin-top: 100px;
 }
+
+.project {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .project {
+    padding: 20px 16px;
+    margin: 20px 12px;
+  }
+}
+
 
 section.show, .edu-card.show, .project.show, .timeline-item.show {
   opacity: 1;
@@ -319,7 +364,7 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
 .icon-code { color: #00ffff; }
 .icon-mysql { color: #00758f; }
 .icon-linux { color: #FCC624; }
-.icon-github { color: #171515; }
+.icon-github { color: #ffffff; }
 .icon-editor { color: #007acc; }
 
 .highlight {
@@ -363,7 +408,9 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
 
 .tech-stack {
   margin-top: 10px;
+  margin-bottom: 20px; /* Added for spacing */
 }
+
 
 .badge-row {
   margin-top: 10px;
@@ -373,14 +420,15 @@ section.show, .edu-card.show, .project.show, .timeline-item.show {
   display: inline-block;
   background-color: rgba(88, 166, 255, 0.12);
   color: #58A6FF;
-  font-size: 0.75rem;
+  font-size: 0.9rem;              /* Increased font size */
   font-weight: 600;
-  padding: 4px 10px;
-  margin: 6px 6px 0 0;
-  border-radius: 12px;
+  padding: 8px 18px;              /* Increased padding for size */
+  margin: 10px 50px 0 0;          /* Increased spacing between badges */
+  border-radius: 14px;            /* Slightly rounder edges */
   border: 1px solid rgba(88, 166, 255, 0.3);
   transition: background-color 0.3s ease;
 }
+
 
 .badge:hover {
   background-color: rgba(88, 166, 255, 0.35);
@@ -536,3 +584,32 @@ footer {
   display: block;
   opacity: 1;
 }
+
+.btn-project.github {
+  background-color: #4C1D95;
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn-project.github:hover {
+  background-color: #5B21B6;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .btn-project.github {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    margin-top: 20px;
+  }
+}
+
