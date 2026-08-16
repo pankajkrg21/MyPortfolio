@@ -664,7 +664,7 @@ button:focus-visible{
 =========================== */
 
 .section{
-    padding:90px 8%;
+    padding:60px 8%;
 }
 
 .reveal,
@@ -705,6 +705,10 @@ button:focus-visible{
 .glass-card:hover{
     transform:translateY(-8px);
     box-shadow:0 20px 40px rgba(37,99,235,.15);
+}
+
+section[id]{
+    scroll-margin-top: 82px; /* navbar height (82px) + a little breathing room */
 }
 
 /* ===========================
@@ -1864,8 +1868,6 @@ button:focus-visible{
 
 }
 
-
-
 /* ===========================
    GITHUB
 =========================== */
@@ -2083,7 +2085,7 @@ footer p:first-child{
 @media(max-width:600px){
 
     .section{
-        padding:70px 6%;
+        padding:40px 6%;
     }
 
     .section-title{
