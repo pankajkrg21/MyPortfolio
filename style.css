@@ -19,6 +19,7 @@
     --cyan:#38BDF8;
     --purple:#8B5CF6;
     --gradient:linear-gradient(135deg,#2563EB,#7C3AED);
+    --navbar-height:82px;
 }
 
 body{
@@ -209,7 +210,7 @@ button:focus-visible{
     position:sticky;
     top:0;
     width:100%;
-    height:82px;
+    height:var(--navbar-height);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -225,6 +226,15 @@ button:focus-visible{
     align-items:center;
     gap:12px;
     font-weight:700;
+    min-width:0;
+    flex-shrink:1;
+}
+
+.logo span{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:220px;
 }
 
 .logo img{
@@ -235,7 +245,8 @@ button:focus-visible{
 .nav-links{
     display:flex;
     list-style:none;
-    gap:28px;
+    gap:22px;
+    flex-shrink:0;
 }
 
 .nav-links a{
@@ -307,7 +318,7 @@ button:focus-visible{
 
 .mobile-menu{
     position:fixed;
-    top:82px;
+    top:var(--navbar-height);
     left:0;
     right:0;
     background:rgba(7,17,31,.96);
@@ -343,7 +354,7 @@ button:focus-visible{
     color:#fff !important;
 }
 
-@media(max-width:980px){
+@media(max-width:1400px){
     .nav-links,
     .resume-btn{
         display:none;
@@ -678,7 +689,7 @@ button:focus-visible{
 }
 
 section[id]{
-    scroll-margin-top:82px;
+    scroll-margin-top:var(--navbar-height);
 }
 
 .reveal,
@@ -1757,8 +1768,8 @@ section[id]{
 
 #topBtn{
     position:fixed;
-    right:25px;
-    bottom:25px;
+    right:calc(25px + env(safe-area-inset-right));
+    bottom:calc(25px + env(safe-area-inset-bottom));
     width:52px;
     height:52px;
     border:none;
@@ -1821,6 +1832,15 @@ section[id]{
 }
 
 @media(max-width:600px){
+     :root{
+        --navbar-height:64px;
+    }
+    .logo img{
+        width:38px;
+    }
+    .navbar{
+        padding:0 5%;
+    }
     .section{
         padding:40px 6%;
     }
@@ -1841,8 +1861,8 @@ section[id]{
     #topBtn{
         width:44px;
         height:44px;
-        right:16px;
-        bottom:16px;
+        right:calc(16px + env(safe-area-inset-right));
+        bottom:calc(16px + env(safe-area-inset-bottom));
         font-size:16px;
     }
 }
